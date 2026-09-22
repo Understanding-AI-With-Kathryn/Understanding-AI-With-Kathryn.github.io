@@ -29,7 +29,8 @@
     <button class="nav-toggle" type="button" aria-controls="primary-nav">Menu</button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
       <ul>
-        <li><a href="index.html">Offer &amp; FAQ</a></li>
+        <li><a href="index.html">Services &amp; FAQ</a></li>
+        <li><a href="find-your-fit.html">Find your fit</a></li>
         <li><a href="intake.html" aria-current="page">Start the conversation</a></li>
       </ul>
     </nav>
@@ -39,13 +40,9 @@
 <main id="main">
   <div class="wrap" style="padding-top:36px;">
 
-    <img class="section-banner" src="assets/intake-banner.jpg" alt="Understanding AI with Kathryn — Practical AI for everyday work">
+    <img class="section-banner" src="assets/intake-banner.jpg" alt="Two women exploring an idea together at a welcoming table">
     <h1>Let's start with your day</h1>
-    <p>A few practical questions to help shape a system around what you need. Send your answers below and Kathryn will follow up by email. To actually book a tier, use the Gumroad link on the <a href="index.html">offer page</a> — this form sends your answers only, it never books or charges anything.</p>
-
-    <div class="notice">
-      <strong>Please use a nickname or project label and non-sensitive, even fictional, examples.</strong> Leave out children's names, school records, medical or financial details, passwords, and access codes.
-    </div>
+    <p>A few practical questions to help shape a system around what you need. Send your answers below and Kathryn will follow up by email. To actually book a tier, use the Gumroad link on the <a href="index.html">services page</a> — this form sends your answers only, it never books or charges anything.</p>
 
     <form data-real-form action="https://formsubmit.co/ajax/understandingaiwithkathryn@gmail.com" method="POST" style="margin-top:28px;">
       <input type="hidden" name="_subject" value="New intake questionnaire — Understanding AI with Kathryn">
@@ -53,15 +50,10 @@
       <input type="hidden" name="_captcha" value="false">
 
       <fieldset>
-        <legend>Project basics</legend>
+        <legend>About you</legend>
         <div class="field">
-          <label for="project-label">Project label</label>
-          <input type="text" id="project-label" name="project-label" autocomplete="off">
-          <span class="hint">A nickname is fine — not your real name.</span>
-        </div>
-        <div class="field">
-          <label for="pref-date">Date</label>
-          <input type="date" id="pref-date" name="pref-date">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
         </div>
         <div class="field">
           <label for="timezone">Preferred time zone</label>
@@ -83,12 +75,12 @@
         </div>
 
         <div class="field">
-          <label for="q3">3. Where do requests and ideas currently arrive? Name tools or channels, not private contents.</label>
+          <label for="q3">3. Where does new work usually land? Name the tools or channels you use.</label>
           <input type="text" id="q3" name="q3">
         </div>
 
         <div class="field">
-          <label for="q4">4. What gets lost between capturing a request and finishing it? Give one fictional example.</label>
+          <label for="q4">4. What tends to get lost between when something lands on your plate and when it's finished? Give one fictional example.</label>
           <textarea id="q4" name="q4"></textarea>
         </div>
 
@@ -129,7 +121,7 @@
         </div>
 
         <div class="field">
-          <label for="q10">10. Which three repeat reviews would help: inbox, commitments, weekly priorities, or another routine? Include timing and time zone.</label>
+          <label for="q10">10. Which regular check-ins would help most — inbox, commitments, weekly priorities, or something else? Let us know timing and time zone.</label>
           <textarea id="q10" name="q10"></textarea>
           <span class="hint">This does not schedule anything.</span>
         </div>
@@ -161,7 +153,7 @@
 
 <footer class="site-footer">
   <img class="footer-logo" src="assets/footer-logo.jpg" alt="Understanding AI with Kathryn">
-  <p>This form emails your answers to Kathryn — it does not book or charge anything. To book a tier, use the Gumroad link on the <a href="index.html">offer page</a>, or email <a href="mailto:understandingaiwithkathryn@gmail.com">understandingaiwithkathryn@gmail.com</a> directly.</p>
+  <p>This form emails your answers to Kathryn — it does not book or charge anything. To book a tier, use the Gumroad link on the <a href="index.html">services page</a>, or email <a href="mailto:understandingaiwithkathryn@gmail.com">understandingaiwithkathryn@gmail.com</a> directly.</p>
 </footer>
 
 <script src="assets/site.js"></script>
