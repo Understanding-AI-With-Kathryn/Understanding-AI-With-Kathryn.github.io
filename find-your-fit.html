@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find your fit — Understanding AI with Kathryn</title>
+  <meta name="description" content="Answer a couple of quick questions to see which Understanding AI with Kathryn tier fits you best.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Understanding AI with Kathryn">
+  <meta property="og:description" content="Answer a couple of quick questions to see which tier fits you best.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/uaiwk-icon.png">
+  <link rel="stylesheet" href="assets/brand.css">
+  <style>
+    .quiz-wrap{max-width:640px;margin:0 auto;padding:44px 20px 60px;}
+  .quiz-card{
+        background:#fff;
+        border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:32px 28px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(67,24,38,.10);
+}
+  .quiz-progress{
+        display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:22px;
+}
+  .quiz-progress span{
+        width:10px;height:10px;border-radius:50%;
+    background:var(--border);
+    display:inline-block;
+}
+  .quiz-progress span.done{background:var(--coral-deep);}
+  .quiz-progress span.current{background:var(--plum);}
+  .quiz-question{
+        font-size:1.3rem;
+    font-weight:bold;
+    color:var(--plum);
+    margin:0 0 26px;
+    line-height:1.4;
+}
+  .quiz-options{
+        display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+  .quiz-option{
+        display:block;
+    width:100%;
+    background:var(--cream-deep);
+    border:2px solid var(--border);
+    border-radius:12px;
+    padding:16px 20px;
+    font:inherit;
+    font-weight:bold;
+    color:var(--plum);
+    cursor:pointer;
+    text-align:center;
+    transition:background .15s, border-color .15s;
+}
+  .quiz-option:hover{
+        background:#fff;
+            border-color:var(--plum);
+  }
+  .quiz-back{
+        display:inline-block;
+    margin-top:22px;
+    font-size:.9rem;
+    color:var(--brown);
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-decoration:underline;
+    font-family:inherit;
+}
+  .quiz-result .spot-badge-inline{
+        display:inline-block;
+    background:var(--plum);
+    color:var(--cream);
+    font-size:.72rem;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+  .quiz-result h2{
+    border:none;
+    margin:0 0 6px;
+}
+  .quiz-result .price{
+    font-size:1.6rem;
+    font-weight:bold;
+    color:var(--coral-deep);
+    margin:0 0 14px;
+  }
+  .quiz-result p.desc{margin:0 0 22px;}
+  .quiz-result .btn{margin:6px;}
+  .quiz-restart{
+        display:block;
+    margin-top:18px;
+    font-size:.9rem;
+    color:var(--brown);
+}
+    </style>
+      </head>
+      <body>
+      <a class="skip-link" href="#main">Skip to main content</a>
+
+      <header class="site-header">
+        <div class="bar">
+          <a class="brand-lockup" href="index.html">
+            <img src="assets/uaiwk-icon.png" alt="Understanding AI with Kathryn logo">
+            <span>
+              <span class="name">Understanding AI with Kathryn</span>
+        <span class="subline">Learn a little. Try a little. Build from there.</span>
+      </span>
+    </a>
+          <button class="nav-toggle" type="button" aria-controls="primary-nav">Menu</button>
+          <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+            <ul>
+              <li><a href="index.html">Services &amp; FAQ</a></li>
+              <li><a href="find-your-fit.html" aria-current="page">Find your fit</a></li>
+        <li><a href="intake.html">Start the conversation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main id="main">
+        <div class="quiz-wrap">
+          <h1 style="text-align:center;">Find your fit</h1>
+    <p style="text-align:center;">Answer two or three quick questions to see which tier is the best place to start. Nothing here books or charges anything.</p>
+
+          <div class="quiz-card" id="quiz-card"></div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <img class="footer-logo" src="assets/footer-logo.jpg" alt="Understanding AI with Kathryn">
+        <p>Questions? <a href="mailto:understandingaiwithkathryn@gmail.com">understandingaiwithkathryn@gmail.com</a></p>
+      </footer>
+
+      <script src="assets/site.js"></script>
+      <script>
+      (function () {
+        "use strict";
+
+  var TIERS = {
+    jumpstart: {
+      badge: "Start here",
+              name: "AI Jumpstart Call",
+              price: "$199 <span style=\"font-size:.9rem;font-weight:normal;\">/ 60 min</span>",
+              desc: "One live working session with Kathryn to pick the single thing worth fixing first and map the initial steps. A low-commitment way to find out whether Blueprint or Build is the right next step.",
+              link: "https://5730209363753.gumroad.com/l/ai-jumpstart-call"
+        },
+            blueprint: {
+      badge: "Sounds like you",
+              name: "Blueprint",
+              price: "$450",
+              desc: "A written plan covering what to automate first, how to structure it, and a 30-day setup roadmap you can follow yourself.",
+              link: "https://5730209363753.gumroad.com/l/blueprint"
+        },
+            build: {
+      badge: "1 spot at a time",
+              name: "Build",
+              price: "$1,500",
+              desc: "Everything in Blueprint, plus Kathryn sets it up with you: onboarding, three scheduled routines, hands-on training, and a two-week follow-up check-in after launch.",
+              link: "https://5730209363753.gumroad.com/l/build"
+        }
+    };
+
+  // Each node is either a question ({q, options:[{label,to}]}) or a result ({result: tierKey}).
+  var NODES = {
+    start: {
+      q: "Do you already know the one thing you want fixed first?",
+              options: [
+        { label: "Not really — I need help figuring that out", to: "result-jumpstart" },
+{ label: "Yes, I know what I want to fix", to: "know-plan-vs-build" }
+      ]
+  },
+    "know-plan-vs-build": {
+      q: "Would you rather follow a written plan yourself, or have Kathryn set it up with you hands-on?",
+              options: [
+        { label: "I'll follow a plan myself", to: "result-blueprint" },
+{ label: "I'd like hands-on help setting it up", to: "build-check" }
+      ]
+    },
+    "build-check": {
+      q: "Build includes onboarding, three scheduled routines, training, and a follow-up check-in — and Kathryn only takes one Build client at a time. Still want that level of hands-on setup?",
+              options: [
+        { label: "Yes, that's what I want", to: "result-build" },
+{ label: "Actually, just the written plan is fine", to: "result-blueprint" }
+      ]
+    },
+    "result-jumpstart": { result: "jumpstart" },
+    "result-blueprint": { result: "blueprint" },
+          "result-build": { result: "build" }
+                        };
+
+  var history = ["start"];
+  var card = document.getElementById("quiz-card");
+
+  function totalSteps() {
+        return 3; // longest path through the tree
+  }
+
+  function renderProgress(stepIndex) {
+        var dots = "";
+    for (var i = 0; i < totalSteps(); i++) {
+      var cls = i < stepIndex ? "done" : (i === stepIndex ? "current" : "");
+      dots += '<span class="' + cls + '"></span>';
+    }
+    return '<div class="quiz-progress" aria-hidden="true">' + dots + "</div>";
+  }
+
+  function renderQuestion(nodeKey) {
+        var node = NODES[nodeKey];
+    var stepIndex = history.length - 1;
+    var html = renderProgress(stepIndex);
+    html += '<p class="quiz-question">' + node.q + "</p>";
+    html += '<div class="quiz-options">';
+    node.options.forEach(function (opt) {
+            html += '<button type="button" class="quiz-option" data-to="' + opt.to + '">' + opt.label + "</button>";
+    });
+    html += "</div>";
+    if (history.length > 1) {
+      html += '<button type="button" class="quiz-back" id="quiz-back-btn">&larr; Back</button>';
+    }
+    card.innerHTML = html;
+
+    Array.prototype.forEach.call(card.querySelectorAll(".quiz-option"), function (btn) {
+            btn.addEventListener("click", function () {
+                      var to = btn.getAttribute("data-to");
+        history.push(to);
+        render();
+            });
+    });
+    var backBtn = document.getElementById("quiz-back-btn");
+    if (backBtn) {
+      backBtn.addEventListener("click", function () {
+                history.pop();
+        render();
+      });
+    }
+  }
+
+  function renderResult(nodeKey) {
+        var tierKey = NODES[nodeKey].result;
+    var tier = TIERS[tierKey];
+    var html = '<div class="quiz-result">';
+    html += '<span class="spot-badge-inline">' + tier.badge + "</span>";
+    html += "<h2>" + tier.name + "</h2>";
+    html += '<p class="price">' + tier.price + "</p>";
+    html += '<p class="desc">' + tier.desc + "</p>";
+    html += '<a class="btn" href="' + tier.link + '">Book on Gumroad</a>';
+    html += ' <a class="btn ghost" href="index.html">See all tiers &amp; FAQ</a>';
+    html += '<a href="#" class="quiz-restart" id="quiz-restart-btn">Start over</a>';
+    html += "</div>";
+    card.innerHTML = html;
+
+    document.getElementById("quiz-restart-btn").addEventListener("click", function (e) {
+            e.preventDefault();
+      history = ["start"];
+      render();
+    });
+  }
+
+  function render() {
+        var nodeKey = history[history.length - 1];
+    var node = NODES[nodeKey];
+    if (node.result) {
+      renderResult(nodeKey);
+    } else {
+      renderQuestion(nodeKey);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+        render();
+  });
+                        })();
+</script>
+  </body>
+  </html>
+  
